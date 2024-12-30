@@ -409,14 +409,14 @@ Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
                                     for YouTube and Twitch
     --no-live-from-start            Download livestreams from the current time
                                     (default)
-    --wait-for-video MIN[-MAX]      Wait for scheduled streams to become
+    --wait-for-video MIN[-MAX][:RETRIES]
+                                    Wait for scheduled streams to become
                                     available. Pass the minimum number of
-                                    seconds (or range) to wait between retries
+                                    seconds (or range) to wait between retries.
+                                    RETRIES is the maximum number of additional
+                                    attempts if the video is still unavailable
+                                    after waiting (default is infinite)
     --no-wait-for-video             Do not wait for scheduled streams (default)
-    --wait-retries RETRIES          Number of retries while waiting for
-                                    scheduled streams to become available
-                                    (default is infinite). --wait-for-video must
-                                    also be set
     --mark-watched                  Mark videos watched (even with --simulate)
     --no-mark-watched               Do not mark videos watched (default)
     --color [STREAM:]POLICY         Whether to emit color codes in output,
