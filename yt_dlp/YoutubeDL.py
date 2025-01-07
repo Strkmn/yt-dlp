@@ -1794,7 +1794,7 @@ class YoutubeDL:
         except KeyboardInterrupt:
             progress('')
             self.to_screen('[wait] Interrupted by user')
-        except BaseException as e:
+        except BaseException:
             self.to_screen('')
             raise
 
