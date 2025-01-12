@@ -246,7 +246,7 @@ def validate_options(opts):
             validate(False, f'{name} retry count', value)
 
     def parse_range_with_arg(name, arg_name, value,
-                                  parse_limits=parse_duration, parse_arg=parse_retries):
+                             parse_limits=parse_duration, parse_arg=parse_retries):
         # syntax: MIN[-MAX][:N]
         m = re.fullmatch(r'([^-:]+)(-[^:]+)?(:.+)?', value)
         validate(m, name, value)
@@ -262,8 +262,7 @@ def validate_options(opts):
 
     if opts.wait_for_video is not None:
         min_wait, max_wait, wait_retries = parse_range_with_arg(
-                'time range to wait for video', 'waiting', opts.wait_for_video)
-        validate_positive('waiting retry count', wait_retries)
+            'time range to wait for video', 'waiting', opts.wait_for_video)
         opts.wait_for_video = (min_wait, max_wait, wait_retries)
 
     # Format sort
